@@ -1,22 +1,25 @@
 ====================================================================
- ModStack, A simple way to build real modular webapps using Angular and Java.
+ ModStack, A simple way to build real modular webapps using AngularJS and Java.
 ====================================================================
 
 ```
-What the needs? 
-* Build a modern HTML5 webapp using a Java/Spring backend and AngularJS for UI.
+*What the needs?* 
+* Build a modern HTML5 webapp using AngularJS and a Java/Spring backend.
+* This webapp would be a shell wherein come be plugged a number of modules.
 * Each module/plugin must have its own lifecycle.
-* Hot-deploy is not a key-feature.
+* Each module could be supported by different development team with minimum overlap
 
-So what's the problem?  
-* We have many solutions for building modular backend (services layer) using Maven
-* But there is no real standard way to build modular UI frontend stuff [see][4].
-* Existing JEE solutions for this concern like Portlet or OSGi are complex and doesn't fit the real needs (I'm not interrested bu
+*What's the problem?*  
+* Many JEE frameworks provide solutions for building pluggable backends and modularizing the service layer using Maven
+* But there is no real standard way to build modular UI frontend stuff [see][4]
+* The existing Java standards like Portlet or OSGi are complex and doesn't actually fit to my real needs
+  - As architect we want something simple which doesn't force developers to master a new technology
+  - We don't consider hot-deploy as a key-feature (even if we realize that it could be very interesting in high availibility context, but be serious: we code in Java and to regulary restart the JVM is just a matter of survival in our production environment)
 * AngularJS doesn't provide a real and asynchronous module system.
 
-
-Ok what's your solution?
-* Exploit servlet 3.0 capabilities to exposes web resources from jars.
+*What's your solution?*
+* Use Maven to package modules as jars et use them in a main webapp which acts as a views wrapper embedding cross-views features
+* Exploit servlet 3.0 capabilities to exposes web resources (JS, CSS) packaging from jars.
 * Dynamically load scripts and stylesheets using requireJS and Javascript hack.
 ```
 

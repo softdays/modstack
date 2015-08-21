@@ -14,7 +14,7 @@
 	<artifactId>modstack-module1-plugin</artifactId>
 	<packaging>jar</packaging>
 
-	<name>modstack::module1 web resources</name>
+	<name>modstack::module1 plugin</name>
 
 	<build>
 		<plugins>

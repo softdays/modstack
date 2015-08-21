@@ -17,7 +17,7 @@
     <version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>modstack::module2</name>
+	<name>modstack::module2 parent</name>
 
     <modules>
         <module>modstack-module2-plugin</module>
