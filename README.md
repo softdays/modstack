@@ -1,15 +1,12 @@
-====================================================================
- ModStack, A simple way to build real modular webapps using AngularJS and Java.
-====================================================================
+# ModStack, a simple way to build real modular webapps using AngularJS and Java.
 
-```
-*What the needs?* 
+## What the needs?
 * Build a modern HTML5 webapp using AngularJS and a Java/Spring backend.
 * This webapp would be a shell wherein come be plugged a number of modules.
 * Each module/plugin must have its own lifecycle.
 * Each module could be supported by different development team with minimum overlap
 
-*What's the problem?*  
+## What's the problems?  
 * Many JEE frameworks provide solutions for building pluggable backends and modularizing the service layer using Maven
 * But there is no real standard way to build modular UI frontend stuff [see][4]
 * The existing Java standards like Portlet or OSGi are complex and doesn't actually fit to my real needs
@@ -17,11 +14,11 @@
   - We don't consider hot-deploy as a key-feature (even if we realize that it could be very interesting in high availibility context, but be serious: we code in Java and to regulary restart the JVM is just a matter of survival in our production environment)
 * AngularJS doesn't provide a real and asynchronous module system.
 
-*What's your solution?*
-* Use Maven to package modules as jars et use them in a main webapp which acts as a views wrapper embedding cross-views features
+## What's our proposal?
+* Use Maven to package modules as jars et use them in a main webapp which acts as a views wrapper embedding cross-views features.
 * Exploit servlet 3.0 capabilities to exposes web resources (JS, CSS) packaging from jars.
-* Dynamically load scripts and stylesheets using requireJS and Javascript hack.
-```
+* Dynamically load JS scripts using requireJS and stylesheets using a well-known javascript hack.
+
 
 ## More Information
 
