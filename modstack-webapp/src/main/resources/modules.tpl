@@ -1,7 +1,9 @@
 console.log('Modules is loading...');
 define(function(require){
     {{#modules}}
-    require('{{scriptUrl}}');
+    {{#scripts}}
+    require('{{.}}');
+    {{/scripts}}
     {{/modules}}
     return function () {
         return {

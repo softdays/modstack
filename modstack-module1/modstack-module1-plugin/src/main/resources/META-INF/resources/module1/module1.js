@@ -15,11 +15,20 @@ define(['angular', 'angular-route', 'angular-resource'],
             '$resource',
             function($resource) {
 
-                var Module1Resource = $resource("api/module1/model");
+                var Module1Item1Resource = $resource("api/module1/item1/model");
+                var Module1Item2Resource = $resource("api/module1/item2/model");
 
                 return {
-                    getModel : function() {
-                        return Module1Resource.get({}, function(data) {
+                    getModelItem1 : function() {
+                        return Module1Item1Resource.get({}, function(data) {
+                           console.log('getModel: '+data);
+                        }, function(httpResponse) {
+                            console.log('getModel: error');
+                        });
+                    },
+                    
+                    getModelItem2 : function() {
+                        return Module1Item2Resource.get({}, function(data) {
                            console.log('getModel: '+data);
                         }, function(httpResponse) {
                             console.log('getModel: error');
@@ -31,23 +40,14 @@ define(['angular', 'angular-route', 'angular-resource'],
         // Configuration of the router
         module.config([ '$routeProvider', function($routeProvider) {
 
-            $routeProvider.when('/module1/home', {
-                templateUrl : "module1/home.html",
-                controller : 'module1Ctl',
-                resolve : {
-                    model : [ 'module1Svc', function(module1Svc) {
-                        return module1Svc.getModel().$promise;
-                    } ]
-                }
-            });   
             
             $routeProvider.when('/module1/item1', {
                 templateUrl : "module1/item1.html",
                 controller : 'module1Item1Ctl',
                 resolve : {
-                    model : function() {
-                        return {value:"item1value"};
-                    }
+                    model : [ 'module1Svc', function(module1Svc) {
+                        return module1Svc.getModelItem1().$promise;
+                    } ]
                 }
             });
             
@@ -55,9 +55,9 @@ define(['angular', 'angular-route', 'angular-resource'],
                 templateUrl : "module1/item2.html",
                 controller : 'module1Item2Ctl',
                 resolve : {
-                    model : function() {
-                        return {value:"item2value"};
-                    } 
+                    model : [ 'module1Svc', function(module1Svc) {
+                        return module1Svc.getModelItem2().$promise;
+                    } ]
                 }
             });            
         }]);

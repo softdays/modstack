@@ -9,7 +9,7 @@
 		<groupId>org.softdays.modstack</groupId>
 		<artifactId>modstack-parent</artifactId>
 		<version>1.0.0</version>
-		<relativePath>../modstack-parent/pom.xml</relativePath>
+		<relativePath>./modstack-parent/pom.xml</relativePath>
 	</parent>
 
 	<groupId>org.softdays.modstack.module1</groupId>
@@ -17,7 +17,7 @@
     <version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>modstack::module1 parent</name>
+	<name>modstack::module1</name>
 
     <modules>
         <module>modstack-module1-plugin</module>

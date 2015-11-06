@@ -3,9 +3,9 @@
     "menu": {
         "main": {"label":"Module N°1"},
         "items": [
-           {"label":"Sub-item #1", "path":"#/module1/item1"},
-           {"label":"Sub-item #2", "path":"#/module1/item2"}
+           {"label":"Écran #1", "path":"#/module1/item1"},
+           {"label":"Écran #2", "path":"#/module1/item2"}
         ]       
     },    
-    "scriptUrl": "module1/module1.js"
+    "scripts": ["module1/module1.js"]
 }

@@ -37,7 +37,7 @@ define(
 
             // Declare the basic routes
             $routeProvider.when('/module2/home', {
-                template : "<h3>This is module#2 with model.value=<code>{{ model.value }}</code></h3>",
+                template : "<div class='module-2'><h5>Yop, je suis le module n°2, je ne suis composé que d'un seul écran, ma couleur est 'Sandstorm' et voici la donnée que j'ai récupéré via un appel Ajax sur mon API REST dédiée = <code>{{ model.value }}</code></h5></div>",
                 controller : 'module2Ctl',
                 resolve : {
                     model : [ 'module2Svc', function(module2Svc) {

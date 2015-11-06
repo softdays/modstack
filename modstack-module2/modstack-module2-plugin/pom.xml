@@ -14,7 +14,7 @@
 	<artifactId>modstack-module2-plugin</artifactId>
 	<packaging>jar</packaging>
 
-	<name>modstack::module2 plugin</name>
+	<name>modstack::module2 web resources</name>
 
 	<build>
 		<plugins>

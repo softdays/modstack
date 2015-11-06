@@ -6,7 +6,7 @@ public class Module {
 
     private Menu menu;
 
-    private String scriptUrl;
+    private String[] scripts;
 
     public String getNgModuleName() {
         return this.ngModuleName;
@@ -14,14 +14,6 @@ public class Module {
 
     public void setNgModuleName(final String ngModuleName) {
         this.ngModuleName = ngModuleName;
-    }
-
-    public String getScriptUrl() {
-        return this.scriptUrl;
-    }
-
-    public void setScriptUrl(final String scriptUrl) {
-        this.scriptUrl = scriptUrl;
     }
 
     public Menu getMenu() {
@@ -32,10 +24,17 @@ public class Module {
         this.menu = menu;
     }
 
+    public String[] getScripts() {
+        return this.scripts;
+    }
+
+    public void setScripts(final String[] scripts) {
+        this.scripts = scripts;
+    }
+
     @Override
     public String toString() {
-        return "Module [ngModuleName=" + this.ngModuleName + ", menu=" + this.menu + ", scriptUrl="
-                + this.scriptUrl + "]";
+        return "Module [ngModuleName=" + this.ngModuleName + ", menu=" + this.menu;
     }
 
 }
